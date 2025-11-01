@@ -1,4 +1,4 @@
-A/*
+/*
  * scytale.c
  *
  * Copyright (c) 2025 Barry Watson
@@ -43,11 +43,11 @@ int main(int argc, char ** argv)
     case 'e':
       encrypt = 1;
       break;
-
+      
     case 'd':
       decrypt = 1;
       break;
-
+      
     case 'w':
       width = atoi(optarg);
       break;
@@ -57,6 +57,7 @@ int main(int argc, char ** argv)
       break;
     }
   }
+  
   // Validate input
   if ((encrypt ^ decrypt) == 0) { // One and only one must be set
     usage = 1;
@@ -65,7 +66,7 @@ int main(int argc, char ** argv)
   if (width >= BUFFLEN || width <= 0) {
     usage = 1;
   }
-
+  
   if (usage) {
     sc_usage();
     exit(-1);
@@ -73,20 +74,20 @@ int main(int argc, char ** argv)
   
   // Perform instructed task
   while (fgets(buff, BUFFLEN, stdin)) {
-      if (encrypt) {
-	sc_encrypt(width, buff, strlen(buff) - 1); // -1 to ignore terminal '\n'
-      }
-      else {
-	sc_decrypt(width, buff, strlen(buff) - 1); // -1 to ignore terminal '\n'
-      }
+    if (encrypt) {
+      sc_encrypt(width, buff, strlen(buff) - 1); // -1 to ignore terminal '\n'
     }
+    else {
+      sc_decrypt(width, buff, strlen(buff) - 1); // -1 to ignore terminal '\n'
+    }
+  }
 }
 
 void sc_encrypt(unsigned int width, char *buffer, size_t len)
 {
   unsigned int w;
   size_t i;
-
+  
   for (w=0; w<width; w++) {
     for (i=w; i<len; i=i+width) {
       putchar(buffer[i]);
@@ -102,7 +103,7 @@ void sc_decrypt(unsigned int width, char *buffer, size_t len)
   unsigned int j;
   
   increment = len/width + ((len % width) ? 1 : 0);
-
+  
   for (i=0; i < increment; i++) {
     for(j=i; j < len; j += increment) {
       putchar(buffer[j]);

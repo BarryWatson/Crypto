@@ -1,4 +1,4 @@
-/*
+A/*
  * scytale.c
  *
  * Copyright (c) 2025 Barry Watson
@@ -10,8 +10,9 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
  *
  *
- * A simple implementation of the σκυτάλη (scytale) cypher.
+ * A simple implementation of the σκυτάλη (scytale) transposition cypher.
  * Try
+ *    echo  "Hello World 123" | ./scytale -e -w4
  *    echo  "Hello World 123" | ./scytale -e -w4  | ./scytale -d -w4
  *
  *
@@ -112,7 +113,7 @@ void sc_decrypt(unsigned int width, char *buffer, size_t len)
 
 void sc_usage()
 {
-  puts("sytale [-d|-e] -w WIDTH");
+  puts("scytale [-d|-e] -w WIDTH");
   puts("\t-d decrypt stdin to stdout.");
   puts("\t-e encrypt stdin to stdout.");
   puts("\t-w WIDTH the width of the scytale.");

@@ -81,6 +81,8 @@ int main(int argc, char ** argv)
       sc_decrypt(width, buff, strlen(buff) - 1); // -1 to ignore terminal '\n'
     }
   }
+
+  return EXIT_SUCCESS;
 }
 
 void sc_encrypt(unsigned int width, char *buffer, size_t len)

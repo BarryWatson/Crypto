@@ -1,4 +1,4 @@
-BINARIES = caesar scytale
+BINARIES = caesar scytale substitution
 
 all: ${BINARIES}
 

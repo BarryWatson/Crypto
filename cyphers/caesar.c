@@ -12,7 +12,7 @@
  *
  * A simple implementation of the caesar shift cypher.
  * Try
- *    echo  "Hello World 123" | ./caesar -e -s3`
+ *    echo  "Hello World 123" | ./caesar -e -s3
  *    echo  "Hello World 123" | ./caesar -e -s3  | ./caesar -d -s3
  *
  *
@@ -81,6 +81,8 @@ int main(int argc, char ** argv)
       cs_process(shift, buff, strlen(buff) - 1, 0); /* -1 to ignore terminal '\n' */
     }
   }
+
+  return EXIT_SUCCESS;
 }
 
 /*

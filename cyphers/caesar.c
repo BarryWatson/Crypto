@@ -63,6 +63,10 @@ int main(int argc, char ** argv)
     usage = 1;
   }
 
+  /*
+   * The shift is our key.
+   * Our keyspace is only 25 elements.
+   */
   if (shift >= 26 || shift <= 0) {
     usage = 1;
   }

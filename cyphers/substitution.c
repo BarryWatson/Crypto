@@ -26,7 +26,11 @@ void s_usage (void);
 char s_encrypt(int ch);
 char s_decrypt(int ch);
 
-/* We only substitute alphabetical characters. */
+/*
+ * The substitution table is our cypher's key.
+ * Here, we only substitute alphabetical characters.
+ * The keyspace is thus 26! = 2^88 [log(26!)/log(2) = 88.38]. 
+ */
 char substitution_table[] = {
 /* A    B    C    D    E    F    G    H    I   */
   'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O',
